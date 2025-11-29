@@ -21,7 +21,6 @@
     margin-top: 5rem;
     border: 1px solid rgba(255, 255, 255, 0.25);
     display: flex;
-    width: 34rem;
     justify-content: space-between;
     gap: 4rem;
     background-color: #0F0F1A;
@@ -32,7 +31,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 5rem;
+    gap: 1rem;
 }
 .project-page-stats h3 {
     font-family: 'Roboto';
@@ -113,21 +112,46 @@
     border: 1px solid rgba(255, 255, 255, 0.25);
 }
 .process {
+    padding: 2rem 0;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    gap: 1.5rem; 
+    align-items: start;
+}
+
+.grid-first,
+.grid-third {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 1.5rem; 
+    height: 100%;
 }
-.process img {
-    width: 65%;
+
+.grid-card img {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    border-radius: 8px; 
 }
-.process-cta {
-    align-self: center;
+
+@media (max-width: 900px) {
+    .image-grid {
+        grid-template-columns: 1fr; 
+    }
 }
-.process-cta * {
-    margin-bottom: 1.5rem;
-}
-.process h3 {
-    font-size: 1.5rem;
-    font-weight: 400;
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .grid-first,
+    .grid-third {
+        display: flex;
+        flex-direction: column; 
+    }
 }
 .visual_design img {
     max-width: 100%;
