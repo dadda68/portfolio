@@ -12,6 +12,13 @@
     <div class="test">
         <header>
             <a href="index.html" class="logo">Nils Birgersson</a>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
             <nav>
                 <a href="#projects-section" class="projects">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,29 +34,29 @@
                 <a href="contact.html" class="contact">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="idea">
-                            <circle cx="12" cy="10.5" r="5" fill="#FFF5EA" opacity="0" />
+                            <circle cx="12" cy="10.5" r="5" fill="#FFF5EA" opacity="0"></circle>
                             <g id="bulb">
                                 <path
                                     d="M14.3691 19.5176C14.1657 20.036 13.5955 20.4004 12.9365 20.4004H11.0635C10.4044 20.4004 9.83446 20.036 9.63086 19.5176H14.3691Z"
-                                    fill="#FFF5EA" />
+                                    fill="#FFF5EA"></path>
                                 <path d="M14.5244 18.6582H9.47559L9.34961 17.7998H14.6504L14.5244 18.6582Z"
-                                    fill="#FFF5EA" />
+                                    fill="#FFF5EA"></path>
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M6 9.73828C6.00032 2.09371 17.9997 2.08077 18 9.73828C18 13.611 14.6396 14.0954 14.6396 17H9.36035C9.36035 14.0954 6 13.611 6 9.73828ZM12.001 6C10.9039 6.00061 9.88345 6.35416 9.1709 6.95996C8.5015 7.52918 8.00008 8.40233 8 9.73828C8 10.9409 8.44787 11.566 9.19043 12.4219C9.66778 12.9721 10.4873 13.801 10.9707 15H13.0293C13.5127 13.801 14.3322 12.9721 14.8096 12.4219C15.5521 11.566 16 10.9409 16 9.73828C15.9999 8.39831 15.4982 7.5251 14.8301 6.95703C14.1184 6.35214 13.0982 5.99941 12.001 6Z"
-                                    fill="#FFF5EA" />
+                                    fill="#FFF5EA"></path>
                             </g>
                             <line id="r1" x1="17.183" y1="5.82" x2="18.9151" y2="4.82" stroke="#FFF5EA"
-                                stroke-linecap="round" opacity="0" />
+                                stroke-linecap="round" opacity="0"></line>
                             <line id="r2" x1="18.5" y1="9.5" x2="20.5" y2="9.5" stroke="#FFF5EA" stroke-linecap="round"
-                                opacity="0" />
+                                opacity="0"></line>
                             <line id="r3" x1="17.683" y1="12.82" x2="19.4151" y2="13.82" stroke="#FFF5EA"
-                                stroke-linecap="round" opacity="0" />
+                                stroke-linecap="round" opacity="0"></line>
                             <line id="l1" x1="6.82" y1="5.82" x2="5.08" y2="4.82" stroke="#FFF5EA"
-                                stroke-linecap="round" opacity="0" />
+                                stroke-linecap="round" opacity="0"></line>
                             <line id="l2" x1="5.5" y1="9.5" x2="3.5" y2="9.5" stroke="#FFF5EA" stroke-linecap="round"
-                                opacity="0" />
+                                opacity="0"></line>
                             <line id="l3" x1="6.32" y1="12.82" x2="4.58" y2="13.82" stroke="#FFF5EA"
-                                stroke-linecap="round" opacity="0" />
+                                stroke-linecap="round" opacity="0"></line>
                         </g>
                     </svg>
                     <p>Let's work</p>
@@ -134,6 +141,36 @@
     <script>
         window.history.scrollRestoration = "manual";
         window.scrollTo(0, 0);
+        // Existing scroll restoration script
+        window.history.scrollRestoration = "manual";
+        window.scrollTo(0, 0);
+
+        // NEW HAMBURGER LOGIC
+        const hamburger = document.querySelector(".hamburger");
+        const nav = document.querySelector("nav");
+        const navLinks = document.querySelectorAll("nav a");
+
+        // Toggle menu on click
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            nav.classList.toggle("active");
+
+            // Optional: Prevent scrolling on body when menu is open
+            if (nav.classList.contains("active")) {
+                document.body.style.overflow = "hidden";
+            } else {
+                document.body.style.overflow = "auto";
+            }
+        });
+
+        // Close menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                nav.classList.remove("active");
+                document.body.style.overflow = "auto";
+            });
+        });
     </script>
 </body>
 

@@ -95,20 +95,29 @@ h1 {
 .illustration-stats {
     display: flex;
     flex-direction: row-reverse;
+    flex-wrap: wrap;
+    /* Allows items to wrap onto the next line */
     justify-content: space-between;
+    /* Centers items when they wrap */
+    gap: 3rem;
+    /* Adds space between the stats card and the silhouette */
     align-items: flex-end;
     margin-top: 8rem;
 }
 
 .stats-card {
     background-color: #0F0F1A;
-    display: inline-flex;
+    display: flex;
+    /* Changed from inline-flex to flex for better wrapping control */
     padding: 1.25rem 1rem;
     align-items: center;
     gap: 1.5rem;
     border-radius: 0.75rem;
     border: 1px solid rgba(255, 255, 255, 0.25);
     height: 100%;
+    /* --- NEW RULE BELOW --- */
+    min-width: 300px;
+    /* Ensures the card itself doesn't get too cramped */
 }
 
 .stats-card h3 {
@@ -342,4 +351,167 @@ footer p {
 
 circle {
     transition: 0.1s;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    z-index: 1001;
+}
+
+.bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #FFF5EA;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+@media only screen and (max-width: 768px) {
+    .silhouette {
+        height: auto;
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+
+    .illustration-stats {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .stats-card {
+        width: 100%;
+        justify-content: space-around;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #0A0A11;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+    }
+
+    nav.active {
+        transform: translateX(0);
+    }
+
+    nav>a {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    nav>a svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    header {
+        padding: 0 1.5rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-top: 5rem;
+    }
+
+    .project {
+        height: auto;
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        max-height: 60vh;
+    }
+
+    .banner {
+        height: 100%;
+        width: 100%;
+    }
+
+    .project-link {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .5rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-link p {
+        font-size: 0.8rem;
+        opacity: 0.7;
+    }
+
+    footer {
+        width: 90%;
+        margin: 8rem auto 5rem auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    footer h3 {
+        font-family: 'roboto';
+        font-size: 1.7rem;
+        font-weight: 400;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+        opacity: 0.7;
+        line-height: 16px;
+    }
+
+    .footer-item {
+        display: inline-flex;
+        flex-direction: column;
+        max-width: 8rem;
+        gap: 2rem;
+    }
+}
+@media only screen and (max-width: 600px) {
+    footer {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .footer-item {
+        display: inline-flex;
+        flex-direction: column;
+        max-width: 80%;
+        gap: 1rem;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .footer-item {
+        max-width: 100%;
+    }
 }
