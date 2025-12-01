@@ -410,7 +410,7 @@ circle {
         left: 0;
         width: 100%;
         padding-right: 5%;
-        height: 100vh;
+        height: 100%;
         background-color: #0A0A11;
         flex-direction: column;
         justify-content: center;
