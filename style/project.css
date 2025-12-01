@@ -188,6 +188,16 @@
     width: 70%;
 }
 
+@media only screen and (max-width: 1300px) {
+    .xbox-result {
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .xbox-result {
+        width: 100%;
+    }
+}
 @media only screen and (max-width: 768px) {
     
     .project-title h1 {
@@ -274,10 +284,14 @@
         align-self: flex-start; 
         font-size: 1.5rem; 
     }
+
+    .result iframe {
+        width: 100%;
+    }
     
     .show {
         width: 100%;
-        margin-bottom: 5rem; 
+        margin-bottom: 5rem;
     }
     
     footer {

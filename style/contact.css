@@ -34,7 +34,9 @@
 }
 h1 {
     text-align: center;
+    margin: auto;
     margin-top: 4rem;
+    width: 40rem;
 }
 .secondary-line {
     margin-top: 4rem;
@@ -45,4 +47,14 @@ h1 {
 }
 footer {
     margin-top: 5rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .contact-form img {
+        width: 2rem;
+    }
+    h1 {
+        font-size: 2rem;
+        width: 20rem;
+    }
 }

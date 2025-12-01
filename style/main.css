@@ -77,6 +77,10 @@ nav>a {
     flex-direction: column;
 }
 
+.home {
+    display: none;
+}
+
 a {
     text-decoration: none;
     color: #FFF5EA;
@@ -396,16 +400,21 @@ circle {
         display: flex;
     }
 
+    .home {
+        display: flex;
+    }
+
     nav {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
+        padding-right: 5%;
         height: 100vh;
         background-color: #0A0A11;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-end;
         gap: 4rem;
         z-index: 1000;
         transform: translateX(100%);
@@ -417,14 +426,20 @@ circle {
     }
 
     nav>a {
-        font-size: 1.5rem;
+        font-size: 1rem;
         flex-direction: column;
+        align-items: flex-end;
         gap: 1.5rem;
     }
 
     nav>a svg {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
+    }
+
+    .contact svg {
+        width: 42px;
+        height: 42px;
     }
 
     .hamburger.active .bar:nth-child(2) {
