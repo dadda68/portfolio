@@ -153,6 +153,16 @@ h1 {
 
 .silhouette {
     max-width: 40rem;
+    transform: translateX(-100px); 
+    
+    /* 2. Apply the animation */
+    animation: slideInFromLeft 1.0s ease-out forwards;
+    
+    /* Optional: Add a small delay so the content loads first */
+    animation-delay: 0.5s; 
+    
+    /* Set opacity to 0 initially so it doesn't flash */
+    opacity: 0;
 }
 
 .project {
@@ -287,6 +297,17 @@ footer p {
     50%,
     100% {
         opacity: .15
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100px); /* Start 100px to the left */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* End at its normal position */
+        opacity: 1;
     }
 }
 
