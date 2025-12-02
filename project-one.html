@@ -21,12 +21,12 @@
 
         <nav>
             <a href="index.html" class="home">
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 38H18V26H30V38H36V20L24 11L12 20V38ZM8 42V18L24 6L40 18V42H26V30H22V42H8Z"
-                            fill="white" />
-                    </svg>
-                    <p>Home</p>
-                </a>
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 38H18V26H30V38H36V20L24 11L12 20V38ZM8 42V18L24 6L40 18V42H26V30H22V42H8Z"
+                        fill="white" />
+                </svg>
+                <p>Home</p>
+            </a>
             <a href="index.html#projects-section" class="projects">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -162,21 +162,20 @@
     <script>
         window.history.scrollRestoration = "manual";
         window.scrollTo(0, 0);
-        // Existing scroll restoration script
+
+        window.history.scrollRestoration = "manual";
+        window.scrollTo(0, 0);
         window.history.scrollRestoration = "manual";
         window.scrollTo(0, 0);
 
-        // NEW HAMBURGER LOGIC
         const hamburger = document.querySelector(".hamburger");
         const nav = document.querySelector("nav");
         const navLinks = document.querySelectorAll("nav a");
 
-        // Toggle menu on click
         hamburger.addEventListener("click", () => {
             hamburger.classList.toggle("active");
             nav.classList.toggle("active");
 
-            // Optional: Prevent scrolling on body when menu is open
             if (nav.classList.contains("active")) {
                 document.body.style.overflow = "hidden";
             } else {
@@ -184,7 +183,6 @@
             }
         });
 
-        // Close menu when a link is clicked
         navLinks.forEach(link => {
             link.addEventListener("click", () => {
                 hamburger.classList.remove("active");

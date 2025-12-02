@@ -84,10 +84,10 @@
                     </div>
                 </div>
             </a>
-            <div class="contact-form">
+            <div class="contact-form" onclick="copyMail()">
                 <img src="images/icons/mail.png" alt="mail icon">
                 <div class="contact-form-text">
-                    <p>Via mail</p>
+                    <p>Copy mail</p>
                     <img src="images/icons/right-up.png" alt="arrow pointing up to the right">
                 </div>
             </div>
@@ -118,21 +118,17 @@
 
         window.history.scrollRestoration = "manual";
         window.scrollTo(0, 0);
-        // Existing scroll restoration script
         window.history.scrollRestoration = "manual";
         window.scrollTo(0, 0);
 
-        // NEW HAMBURGER LOGIC
         const hamburger = document.querySelector(".hamburger");
         const nav = document.querySelector("nav");
         const navLinks = document.querySelectorAll("nav a");
 
-        // Toggle menu on click
         hamburger.addEventListener("click", () => {
             hamburger.classList.toggle("active");
             nav.classList.toggle("active");
 
-            // Optional: Prevent scrolling on body when menu is open
             if (nav.classList.contains("active")) {
                 document.body.style.overflow = "hidden";
             } else {
@@ -140,7 +136,6 @@
             }
         });
 
-        // Close menu when a link is clicked
         navLinks.forEach(link => {
             link.addEventListener("click", () => {
                 hamburger.classList.remove("active");
@@ -148,6 +143,10 @@
                 document.body.style.overflow = "auto";
             });
         });
+
+        function copyMail() {
+            navigator.clipboard.writeText("nils.i.birgersson@gmail.com");
+        }
     </script>
 </body>
 

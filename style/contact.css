@@ -23,6 +23,11 @@
     box-shadow: 0 0 50px .1px rgba(255, 87, 45, .1);
 }
 
+.contact-form:active {
+    background-color: #08080f;
+    border: 1px solid rgba(255, 255, 255, 0.437);
+}
+
 .contact-form img {
     width: 2.5rem;
 }

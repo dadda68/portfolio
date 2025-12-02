@@ -100,11 +100,8 @@ h1 {
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap;
-    /* Allows items to wrap onto the next line */
     justify-content: space-between;
-    /* Centers items when they wrap */
     gap: 3rem;
-    /* Adds space between the stats card and the silhouette */
     align-items: flex-end;
     margin-top: 8rem;
 }
@@ -112,16 +109,13 @@ h1 {
 .stats-card {
     background-color: #0F0F1A;
     display: flex;
-    /* Changed from inline-flex to flex for better wrapping control */
     padding: 1.25rem 1rem;
     align-items: center;
     gap: 1.5rem;
     border-radius: 0.75rem;
     border: 1px solid rgba(255, 255, 255, 0.25);
     height: 100%;
-    /* --- NEW RULE BELOW --- */
     min-width: 300px;
-    /* Ensures the card itself doesn't get too cramped */
 }
 
 .stats-card h3 {
@@ -153,15 +147,9 @@ h1 {
 
 .silhouette {
     max-width: 40rem;
-    transform: translateX(-100px); 
-    
-    /* 2. Apply the animation */
+    transform: translateX(-100px);
     animation: slideInFromLeft 1.0s ease-out forwards;
-    
-    /* Optional: Add a small delay so the content loads first */
-    animation-delay: 0.5s; 
-    
-    /* Set opacity to 0 initially so it doesn't flash */
+    animation-delay: 0.5s;
     opacity: 0;
 }
 
@@ -302,11 +290,12 @@ footer p {
 
 @keyframes slideInFromLeft {
     0% {
-        transform: translateX(-100px); /* Start 100px to the left */
+        transform: translateX(-100px);
         opacity: 0;
     }
+
     100% {
-        transform: translateX(0); /* End at its normal position */
+        transform: translateX(0);
         opacity: 1;
     }
 }
@@ -534,11 +523,13 @@ circle {
         gap: 2rem;
     }
 }
+
 @media only screen and (max-width: 600px) {
     footer {
         flex-direction: column;
         gap: 3rem;
     }
+
     .footer-item {
         display: inline-flex;
         flex-direction: column;
@@ -546,6 +537,7 @@ circle {
         gap: 1rem;
     }
 }
+
 @media only screen and (max-width: 400px) {
     .footer-item {
         max-width: 100%;

@@ -111,7 +111,7 @@
                     </div>
                     <div class="project-link">
                         <p>2025.10.11 - 2025.11.04</p>
-                        <a class="blink-cta" href="#">Go to project <span class="blink-class"><span aria-hidden="true"
+                        <a class="blink-cta" href="project-two.html">Go to project <span class="blink-class"><span aria-hidden="true"
                                     class="animate-arrow">></span><span aria-hidden="true"
                                     class="animate-arrow second-arrow">></span></span></a>
                     </div>
@@ -148,21 +148,17 @@
     <script>
         window.history.scrollRestoration = "manual";
         window.scrollTo(0, 0);
-        // Existing scroll restoration script
         window.history.scrollRestoration = "manual";
         window.scrollTo(0, 0);
 
-        // NEW HAMBURGER LOGIC
         const hamburger = document.querySelector(".hamburger");
         const nav = document.querySelector("nav");
         const navLinks = document.querySelectorAll("nav a");
 
-        // Toggle menu on click
         hamburger.addEventListener("click", () => {
             hamburger.classList.toggle("active");
             nav.classList.toggle("active");
 
-            // Optional: Prevent scrolling on body when menu is open
             if (nav.classList.contains("active")) {
                 document.body.style.overflow = "hidden";
             } else {
@@ -170,7 +166,6 @@
             }
         });
 
-        // Close menu when a link is clicked
         navLinks.forEach(link => {
             link.addEventListener("click", () => {
                 hamburger.classList.remove("active");
